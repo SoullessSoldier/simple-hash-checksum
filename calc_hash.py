@@ -20,7 +20,17 @@ with open(sys.argv[1], 'rb') as f:
 print("MD5: {0}".format(md5.hexdigest()))
 print("SHA1: {0}".format(sha1.hexdigest()))
 print("SHA256: {0}".format(sha256.hexdigest()))
-
+'''
+with open(sys.argv[2], 'rb') as f:
+        lines=f.readlines()
+        for line in lines:
+            if line.startswith("SHA256"):
+                sha=line.split(": ").strip()
+                if sha==sha256.hexdigest():
+                    print("SHA256 hashes are equal")
+                else:
+                    print("SHA256 hashes are NOT equal")
+'''                    
 
 '''
 def get_digest(file_path):
